@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.7.3
+services: dbtest
+branches:
+  only:
+  - master
+before_deploy:
+- find . -type f -perm 0444
+- export CF_TRACE=true
+deploy:
+  provider: cloudfoundry
+  username: richar.fernandez@unmsm.edu.pe
+  password:
+    secure: "Gxp/bGcuNqoyfm6euj9XczUY/Gd4/4rKd+3PDKAwdCo8hat9lHRVtyQiPCYo7XUeqz4RPa4jb//C1KWaxVgcLZ4Gwgt8fE/+9GQVFkpBWVWQe2ijhvQnso4fJ2kSi4y9kKt+nbDBws1xSFbqBPEZrRRaNLg5fA0kIaFcjQVcSrU8hVgh2TPe22u5hgjHpVwcCvNvpgwECFiHrlUv5r3S+KfMN4WCUpkgAwnpc5DbG5LezhyPgqvwIDhyhHy6flEu0tM6aLIhGXuRk4bUAdl187mQrvR4g1FBauCJ2hTRqvfP7fv0JmFG5epWAwYkOTzzu6BGDR0aS19z8q6N80hSCKV5L7+UYDo+bha5b6p6FWZfAJlQfyW4gCHGHPQcvSkS/YeOen27GSHPKYo5EWeJy305R+Nw9lXFWTbmoSkeJ5GPo0CRZ0NR9zHRtyIZmmC8EZWz+XlJwvR0V6TjeWu3W5vyRZe/PKZppUa9eNW/HbG6KJqwFzwDYzFxYoQ9f2uCcQHBgNCp1alTEKp2CvSXiGaYwOAyj/oBzidjdy27yUhLvPGI+XXIUwx1wekCmBhhtxZSJuwcKjHdxDcvfkQWn6Q843nqHp9NpzUJS5JCc84Mdp+UHkwbTZCbqBIreP9J0Lnslo6ia8SovvUzJJilcqgoGNlSnqPqpuaLxEkPaUk="
+  api: https://api.run.pivotal.io
+  organization: rfernandezvilchez
+  space: development
