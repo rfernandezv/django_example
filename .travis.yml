@@ -5,6 +5,8 @@ services: dbtest
 branches:
   only:
   - master
+before_install:
+ - pip install -r requirements/test.txt
 before_deploy:
 - find . -type f -perm 0444
 - export CF_TRACE=true
