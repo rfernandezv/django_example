@@ -84,6 +84,10 @@ DATABASES = {
             'PASSWORD': '5ba1e418',
             'HOST': 'us-cdbr-iron-east-02.cleardb.net',
             'PORT': '3306',
+            'TEST': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': 'test.db',
+            },
         }
     #'default': {
     #        'ENGINE': 'django.db.backends.mysql',
