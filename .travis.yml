@@ -2,7 +2,7 @@ language: python
 python:
 - 3.6.5
 services: dbtest
-script: make test
+script: python manage.py test
 branches:
   only:
   - master
